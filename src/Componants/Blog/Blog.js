@@ -16,8 +16,14 @@ const Blog = () => {
 
             </div>
             <div>
-                <h3 className='bg-info bg-gradient p-2 m-4 ' > Short note of Useref hook .</h3>
-                <h5 className='m-5'>The useRef Hook allows you to persist values between renders. It can be used to store a mutable value that does not cause a re-render when updated. It can be used to access a DOM element directly.useRef returns a mutable ref object whose .current property is initialized to the passed argument ( initialValue ). The returned object will persist for the full lifetime of the component. Essentially, useRef is like a “box” that can hold a mutable value in its .current property.Use useRef if you need to manage focus, text selection, trigger imperative animations or integrating third-party libraries.
+                <h3 className='bg-info bg-gradient p-2 m-4 ' >4.3  How does the private route work?</h3>
+                <h5 className='m-5'>The private route component is similar to the public route, the only change is that redirect URL and authenticate condition. If the user is not authenticated he will be redirected to the login page and the user can only access the authenticated routes If he is authenticated (Logged in).
+                </h5>
+
+            </div>
+            <div>
+                <h3 className='bg-info bg-gradient p-2 m-4 ' >4.4 What is Node? How does Node work?</h3>
+                <h5 className='m-5'>Node.js is designed to build scalable network applications.It is a used as backend service where javascript works on the server-side of the application. This way javascript is used on both frontend and backend. Node. js runs on chrome v8 engine which converts javascript code into machine code, it is highly scalable, lightweight, fast, and data-intensive.
                 </h5>
 
             </div>
