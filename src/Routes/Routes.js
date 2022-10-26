@@ -30,6 +30,14 @@ export const routes = createBrowserRouter([
             {
                 path: '/courses/:id',
                 element: <Categories></Categories>
+            },
+            {
+                path: '*',
+                element: <div className='position-absolute bottom-50 end-50'>
+                    <h1>404</h1>
+                    <h2>Oops!!! You're Lost 😥</h2>
+                    <p>The Page you are looking for was not found..................</p>
+                </div>
             }
 
         ]

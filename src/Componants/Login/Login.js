@@ -7,13 +7,28 @@ import {
     MDBTabsContent,
     MDBTabsPane,
     MDBBtn,
-    MDBIcon,
+
     MDBInput,
     MDBCheckbox
 }
     from 'mdb-react-ui-kit';
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import { FaGoogle, FaGithub } from "react-icons/fa";
 
 function App() {
+    // const { providerLogin } = useContext(AuthContext);
+
+    // const googleProvider = new GoogleAuthProvider()
+
+    // const handleGoogleSignIn = () => {
+    //     providerLogin(googleProvider)
+    //         .then(result => {
+    //             const user = result.user;
+    //             console.log(user);
+    //         })
+    //         .catch(error => console.error(error))
+    // }
 
     const [justifyActive, setJustifyActive] = useState('tab1');;
 
@@ -45,26 +60,24 @@ function App() {
 
                 <MDBTabsPane show={justifyActive === 'tab1'}>
 
-                    <div className="text-center mb-3">
-                        <p>Sign in with:</p>
-
-                        <div className='d-flex justify-content-between mx-auto' style={{ width: '40%' }}>
+                    <div className='text-center'>
+                        <p>Sign in with: <br></br></p>
 
 
-                            <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-                                <MDBIcon fab icon='google' size="sm" />
-                            </MDBBtn>
 
-                            <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-                                <MDBIcon fab icon='github' size="sm" />
-                            </MDBBtn>
-                        </div>
+
+
+                        <ButtonGroup horizontal className='mb-3 d-flex justify-content-between'>
+                            <Button variant="outline-primary"> <FaGoogle></FaGoogle> Login with Google</Button>
+                            <Button variant="outline-dark"> <FaGithub></FaGithub> Login with Github</Button>
+                        </ButtonGroup>
+
 
                         <p className="text-center mt-3">or:</p>
                     </div>
 
-                    <MDBInput wrapperClass='mb-4' label='Email address' id='form1' type='email' />
-                    <MDBInput wrapperClass='mb-4' label='Password' id='form2' type='password' />
+                    <MDBInput wrapperClass='mb-4' label='Email address' id='form1' type='email' required />
+                    <MDBInput wrapperClass='mb-4' label='Password' id='form2' type='password' required />
 
                     <div className="d-flex justify-content-between mx-4 mb-4">
                         <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
@@ -79,25 +92,12 @@ function App() {
                 <MDBTabsPane show={justifyActive === 'tab2'}>
 
                     <div className="text-center mb-3">
-                        <p>Sign un with:</p>
+                        <p>Sign up with:</p>
 
-                        <div className='d-flex justify-content-between mx-auto' style={{ width: '40%' }}>
-                            <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-                                <MDBIcon fab icon='facebook-f' size="sm" />
-                            </MDBBtn>
-
-                            <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-                                <MDBIcon fab icon='twitter' size="sm" />
-                            </MDBBtn>
-
-                            <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-                                <MDBIcon fab icon='google' size="sm" />
-                            </MDBBtn>
-
-                            <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#1266f1' }}>
-                                <MDBIcon fab icon='github' size="sm" />
-                            </MDBBtn>
-                        </div>
+                        <ButtonGroup horizontal className='mb-3 d-flex justify-content-between'>
+                            <Button variant="outline-primary"> <FaGoogle></FaGoogle> Login with Google</Button>
+                            <Button variant="outline-dark"> <FaGithub></FaGithub> Login with Github</Button>
+                        </ButtonGroup>
 
                         <p className="text-center mt-3">or:</p>
                     </div>
@@ -106,6 +106,7 @@ function App() {
                     <MDBInput wrapperClass='mb-4' label='Username' id='form1' type='text' />
                     <MDBInput wrapperClass='mb-4' label='Email' id='form1' type='email' />
                     <MDBInput wrapperClass='mb-4' label='Password' id='form1' type='password' />
+
 
                     <div className='d-flex justify-content-center mb-4'>
                         <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' />

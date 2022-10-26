@@ -6,11 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Authprovider from './Contexts/UserContext/Authprovider';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+
+    <Authprovider>
+      <App />
+    </Authprovider>
   </React.StrictMode>
 );
 
