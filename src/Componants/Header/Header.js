@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { IoMdDownload } from 'react-icons/io';
 
 
-// import { AuthContext } from '../../Contexts/UserContext/Authprovider';
+import { AuthContext } from '../../Contexts/UserContext/Authprovider';
 
 
 const Header = () => {
-    // const { user } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
 
 
@@ -42,7 +42,7 @@ const Header = () => {
                         <Nav.Link href="/download" ><IoMdDownload></IoMdDownload></Nav.Link>
                         <Nav.Link href="/dark" >🌙</Nav.Link>
 
-                        {/* <Nav.Link href="#display">{user?.displayName}</Nav.Link> */}
+                        <Nav.Link href="#display">{user?.displayName}</Nav.Link>
 
                     </Nav>
                 </Navbar.Collapse>

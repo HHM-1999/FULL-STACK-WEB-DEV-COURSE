@@ -20,6 +20,10 @@ const Register = () => {
                         <label htmlFor="confirm">Confirm Password</label>
                         <input type="password" name="confirm" required />
                     </div>
+                    <div className="controlling">
+                        <label htmlFor="photo">Upload Photo</label>
+                        <input type="jpg" name="photo" required />
+                    </div>
                     <input className='submit-login' type="submit" value="Sign Up" />
 
                 </form>
