@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Card from '../Card/Card';
 
 const Categories = () => {
 
@@ -7,24 +8,34 @@ const Categories = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/course-courses')
+        fetch('http://localhost:5000/course-categories')
             .then(res => res.json())
             .then(data => setCategories(data));
     })
     return (
         <div>
-            <h2>Total Courses :{categories.length}
+            <div className="mt-3 d-flex justify-content-between" >
+                <div>
+                    {
+                        categories.map(category => <p key={category.id}>
+                            <Link to={`/courses/${category.id}`}
+                                className='category'>
+                                {category.title_name}
 
-            </h2>
-            <div className="mt-3" >
-                {
-                    categories.map(category => <p key={category.id}>
-                        <Link to={`/courses/${category.id}`}
-                            className='category'>
-                            {category.title_name}
-                        </Link>
-                    </p>)
-                }
+                            </Link>
+                        </p>)
+                    }
+                </div>
+
+                <div>
+                    {
+                        categories.map(c => <Card key={c.id}
+                            c={c}
+                        >
+
+                        </Card>)
+                    }
+                </div>
             </div>
         </div>
     );
