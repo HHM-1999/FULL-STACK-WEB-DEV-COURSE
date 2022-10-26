@@ -7,7 +7,7 @@ const Categories = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/course-categories')
+        fetch('http://localhost:5000/course-courses')
             .then(res => res.json())
             .then(data => setCategories(data));
     })

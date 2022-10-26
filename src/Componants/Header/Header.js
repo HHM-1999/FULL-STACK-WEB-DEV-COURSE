@@ -1,15 +1,28 @@
+import { signOut } from 'firebase/auth';
 import React, { useContext } from 'react';
+import { Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { IoMdDownload } from 'react-icons/io';
+import { FaUser } from 'react-icons/fa';
+// import { IoMdDownload } from 'react-icons/io';
 
 
-import { AuthContext } from '../../Contexts/UserContext/Authprovider';
+import { auth, AuthContext } from '../../Contexts/UserContext/Authprovider';
 
 
 const Header = () => {
-    const { user } = useContext(AuthContext)
+
+    const { user } = useContext(AuthContext);
+
+    console.log(user);
+    const handleLogOut = () => {
+        signOut(auth).then(() => {
+            // Sign-out successful.
+        }).catch((error) => {
+            // An error happened.
+        });
+    }
 
 
 
@@ -32,17 +45,41 @@ const Header = () => {
                         <Nav.Link href="/coursesdetail"> Web Dev Details </Nav.Link>
 
                     </Nav>
+                </Navbar.Collapse>
+                <Navbar.Collapse>
                     <Nav>
                         <Nav.Link href="/blog" >BLOG</Nav.Link>
                         <Nav.Link href="/faq">
                             FAQ
                         </Nav.Link>
-                        <Nav.Link href="/login">Login</Nav.Link>
-                        <Nav.Link href="/register">Register</Nav.Link>
-                        <Nav.Link href="/download" ><IoMdDownload></IoMdDownload></Nav.Link>
-                        <Nav.Link href="/dark" >🌙</Nav.Link>
+                        {
+                            user?.uid
+                                ?
+                                <div className='d-flex'>
+                                    <Nav.Link >{user?.displayName}</Nav.Link>
+                                    <Nav.Link onClick={handleLogOut} href="/logout">Logout</Nav.Link>
+                                </div>
+                                :
+                                <div className='d-flex'>
+                                    <Nav.Link href="/login">Login</Nav.Link>
+                                    <Nav.Link href="/register">Register</Nav.Link>
 
-                        <Nav.Link href="#display">{user?.displayName}</Nav.Link>
+                                </div>
+
+                        }
+
+
+                        {/* <Nav.Link href="/download" ><IoMdDownload></IoMdDownload></Nav.Link> */}
+
+
+                        {/* <Nav.Link eventkey={2} href="#" >{user?.photoURL ?
+                            <Image style={{ height: '40px' }}
+                                roundedCircle src={user.photoURL}></Image> : <FaUser></FaUser>}
+
+                        </Nav.Link> */}
+
+
+
 
                     </Nav>
                 </Navbar.Collapse>
