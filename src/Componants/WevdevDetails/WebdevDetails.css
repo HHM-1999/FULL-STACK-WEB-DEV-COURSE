@@ -1,6 +1,7 @@
-.submit-sign {
-    width: 435px;
+.submit-detail{
+     width: 435px;
     height: 60px;
+    margin: 35%;
     background: rgb(84, 84, 241);
     border-radius: 5px;
     font-size: 21px;
@@ -8,4 +9,3 @@
     border: none;
     padding-left: 10px;
 }
-

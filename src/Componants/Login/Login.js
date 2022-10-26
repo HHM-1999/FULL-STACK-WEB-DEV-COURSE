@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
-
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from 'react-icons/fa'
 
 const Login = () => {
     return (
@@ -17,9 +18,15 @@ const Login = () => {
                         <label htmlFor="password">Password</label>
                         <input type="password" name="password" required />
                     </div>
-                    <input className='submit mt-4' type="submit" value="LOGIN" />
+                    <input className='submit-login mt-4' type="submit" value="LOGIN" />
                 </form>
                 <p className='text-center mt-4'>New Member ? <Link to='/register'>Register </Link></p>
+                <p className='text-center mt-4'>Sign in with:</p>
+                <div className='d-flex justify-content-between'>
+                    <Link><FcGoogle className='mb-5 mx-5'></FcGoogle></Link>
+                    <Link><FaGithub className='mb-5 mx-5 '></FaGithub></Link>
+                </div>
+
             </div>
         </div>
     );

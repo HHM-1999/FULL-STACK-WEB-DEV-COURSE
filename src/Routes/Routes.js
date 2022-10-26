@@ -2,9 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Componants/Blog/Blog";
 import Categories from "../Componants/Categories/Categories";
 import Courses from "../Componants/Courses/Courses";
+import DownloadPdf from "../Componants/DownloadPdf/DownloadPdf";
 import Home from "../Componants/Home/Home";
 import Login from "../Componants/Login/Login";
 import Register from "../Componants/Register/Register";
+import WebdevDetails from "../Componants/WevdevDetails/WebdevDetails";
 import Main from "../Layout/Main";
 
 export const routes = createBrowserRouter([
@@ -25,12 +27,22 @@ export const routes = createBrowserRouter([
                 element: <Courses></Courses>
             },
             {
+                path: '/coursesdetail',
+                element: <WebdevDetails></WebdevDetails>
+
+            },
+            {
                 path: '/login',
                 element: <Login></Login>
             },
             {
                 path: '/register',
                 element: <Register></Register>
+
+            },
+            {
+                path: '/download',
+                element: <DownloadPdf></DownloadPdf>
 
             },
             {
