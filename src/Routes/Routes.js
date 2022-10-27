@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Componants/Blog/Blog";
 import Card from "../Componants/Card/Card";
 import Categories from "../Componants/Categories/Categories";
+import CheckOut from "../Componants/Checkout/CheckOut";
 import Courses from "../Componants/Courses/Courses";
 import DownloadPdf from "../Componants/DownloadPdf/DownloadPdf";
 import Home from "../Componants/Home/Home";
@@ -40,6 +41,10 @@ export const routes = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>
 
+            },
+            {
+                path: '/checkout',
+                element: <CheckOut></CheckOut>
             },
             {
                 path: '/download',

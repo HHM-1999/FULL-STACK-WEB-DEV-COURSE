@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './WebdevDetails.css';
 
 const WebdevDetails = () => {
@@ -20,7 +21,7 @@ const WebdevDetails = () => {
 
                 </Row>
             </Container>
-            <input className='submit-detail mt-5' type="submit" value="Get Premium Access" />
+            <Link to="/checkout" class="btn btn-primary mx-4 mt-5">Get Premium Acccess</Link>
         </div>
     );
 };

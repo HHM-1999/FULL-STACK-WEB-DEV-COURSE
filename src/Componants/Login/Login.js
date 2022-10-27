@@ -4,22 +4,38 @@ import './Login.css';
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from 'react-icons/fa'
 import { AuthContext } from '../../Contexts/UserContext/Authprovider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GoogleAuthProvider, GithubAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-    const { providerLogin } = useContext(AuthContext);
+    const { providerLogin, githubSignIn } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
+
+
+
+    //////google Sign in
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
             .then(result => {
-                const user = result.user;
-                console.log(user);
+                // const user = result.user;
+                // console.log(user);
             })
             .catch(error => console.error(error)
             )
 
 
+    }
+
+    ////Github Sign in
+    const handleGithubSignIn = () => {
+        githubSignIn(githubProvider)
+            .then((result) => {
+                // const user = result.user;
+                // console.log(user);
+            }).catch((error) => {
+                console.log(error);
+            });
     }
     return (
         <div>
@@ -40,7 +56,7 @@ const Login = () => {
                 <p className='text-center mt-4'>Sign in with:</p>
                 <div className='d-flex justify-content-between'>
                     <Link onClick={handleGoogleSignIn}><FcGoogle className='mb-5 mx-5'></FcGoogle></Link>
-                    <Link><FaGithub className='mb-5 mx-5 '></FaGithub></Link>
+                    <Link onClick={handleGithubSignIn}><FaGithub className='mb-5 mx-5 '></FaGithub></Link>
                 </div>
 
             </div>
