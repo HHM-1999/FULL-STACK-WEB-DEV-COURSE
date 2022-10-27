@@ -1,10 +1,10 @@
 import { signOut } from 'firebase/auth';
 import React, { useContext } from 'react';
+import { Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { IoMdDownload } from 'react-icons/io';
-
 
 import { auth, AuthContext } from '../../Contexts/UserContext/Authprovider';
 
@@ -50,8 +50,22 @@ const Header = () => {
                                     <Nav.Link href="/courses"> Web Development</Nav.Link>
                                     <Nav.Link href="/coursesdetail"> Web Dev Details </Nav.Link>
                                     <Nav.Link href="/blog" >BLOG</Nav.Link>
-                                    <Nav.Link >{user?.displayName}</Nav.Link>
-                                    <Nav.Link >{user?.p}</Nav.Link>
+                                    <Nav.Link >
+                                        <OverlayTrigger
+                                            placement="bottom"
+                                            overlay={<Tooltip id="button-tooltip-2">{user.displayName}</Tooltip>}
+                                        >
+                                            <Image
+                                                style={{
+                                                    width: '30px',
+                                                    height: '30px'
+                                                }}
+
+                                                roundedCircle
+                                                src={user.photoURL}
+                                            />
+                                        </OverlayTrigger>
+                                    </Nav.Link>
 
                                     <Nav.Link onClick={handleLogOut} href="/logout">Logout</Nav.Link>
                                     <Nav.Link href="/download" ><IoMdDownload></IoMdDownload></Nav.Link>

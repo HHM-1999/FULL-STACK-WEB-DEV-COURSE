@@ -3,16 +3,14 @@ import { getAuth, onAuthStateChanged, signInWithPopup } from 'firebase/auth';
 import app from '../../Firebase/firebase.config'
 import { useEffect } from 'react';
 
+
 export const AuthContext = createContext();
 export const auth = getAuth(app);
 
 const Authprovider = ({ children }) => {
 
 
-    // const createUser = (email, password) => {
-    //     setLoading(true);
-    //     return createUserWithEmailAndPassword(auth, email, password);
-    // }
+
     const [user, setUser] = useState(null);
     ///GOOGLE///
     const providerLogin = (provider) => {

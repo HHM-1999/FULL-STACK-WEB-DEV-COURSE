@@ -1,27 +1,22 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './WebdevDetails.css';
+import useStore from '../Card/zustand';
 
 const WebdevDetails = () => {
+    const { data } = useStore();
+    console.log(data);
     return (
         <div>
             <Container className='mt-5'>
-                <Row className='mx-5'>
-                    <Col>
-                        <h1>TITLE: </h1>
-                        <h3>Description :</h3>
-                        <p>Here</p>
+                <h2>TITLE: <br></br><span className='text-primary'>{data.title_name} </span></h2>
+                <h3>Description :<br></br>{data.Description}:</h3>
+                <Image src={data.img} style={{ width: '250px', height: '200px' }}></Image>
+                <Link to="/checkout" class="btn btn-primary mx-4 mt-5 justify-content-center">Get Premium Acccess</Link>
 
-
-                    </Col>
-                    <Col>
-                        <h2>hello</h2>
-                    </Col>
-
-                </Row>
             </Container>
-            <Link to="/checkout" class="btn btn-primary mx-4 mt-5">Get Premium Acccess</Link>
+
         </div>
     );
 };

@@ -10,6 +10,7 @@ import Login from "../Componants/Login/Login";
 import Register from "../Componants/Register/Register";
 import WebdevDetails from "../Componants/WevdevDetails/WebdevDetails";
 import Main from "../Layout/Main";
+import PrivateRoute from "./PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -18,7 +19,7 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/home',
-                element: <Home></Home>
+                element: <PrivateRoute><Home></Home></PrivateRoute>
             },
             {
                 path: '/blog',

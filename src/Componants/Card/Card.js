@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useStore from './zustand';
 
 
 const Card = ({ c }) => {
+    const { data, setData } = useStore();
+    const datadetails = () => {
+        setData(c);
+    }
 
     return (
         <div className="card mb-4 border border-2" style={{ padding: '10px' }} >
@@ -22,7 +27,7 @@ const Card = ({ c }) => {
                         <p>Rating :<span className='text-primary'>{c?.rating.number} </span> <span className='text-success'>{c?.rating.badge}</span>
                             <p>Published Date: {c?.published_date}</p>
                         </p>
-                        <Link to="/coursesdetail" class="btn btn-primary">See More Details</Link>
+                        <Link to="/coursesdetail" onClick={datadetails} class="btn btn-primary">See More Details</Link>
 
 
 
