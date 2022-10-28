@@ -8,7 +8,7 @@ const Categories = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/course-categories')
+        fetch('https://assignment-10-server-side-delta.vercel.app/course-categories')
             .then(res => res.json())
             .then(data => setCategories(data));
     })

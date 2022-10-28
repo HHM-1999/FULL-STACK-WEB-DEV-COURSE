@@ -53,7 +53,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/catagories',
                 element: <Card></Card>,
-                loader: () => fetch(`http://localhost:5000/course-categories`)
+                loader: () => fetch(`https://assignment-10-server-side-delta.vercel.app/course-categories`)
             },
             {
                 path: '*',
