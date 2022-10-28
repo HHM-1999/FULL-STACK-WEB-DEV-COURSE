@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
 import Container from 'react-bootstrap/Container';
-import { Link } from 'react-router-dom';
+
 import Image from '../Home/Image.png';
 import Photo from '../Home/Photo.png';
 

@@ -27,7 +27,7 @@ const Header = () => {
 
             <Container>
 
-                <Navbar.Brand className='fw-bold'> 📚  PRACTICE TO PERFECT</Navbar.Brand>
+                <Navbar.Brand className='fw-bold'> 📚 FULL STACK WEB DEVELOPMENT</Navbar.Brand>
                 <Navbar.Brand className='fw-bold' href="/home">Home </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -41,8 +41,8 @@ const Header = () => {
                             user?.uid
                                 ?
                                 <div className='d-flex '>
-                                    <Nav.Link href="/courses"> Web Development</Nav.Link>
-                                    <Nav.Link href="/coursesdetail"> Web Dev Details </Nav.Link>
+                                    <Nav.Link href="/courses">Courses</Nav.Link>
+                                    <Nav.Link href="/coursesdetail">Details </Nav.Link>
                                     <Nav.Link href="/blog" >BLOG</Nav.Link>
                                     <Nav.Link href="/blog" >FAQ</Nav.Link>
                                     <Nav.Link href="#">
