@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 
+
 import { auth, AuthContext } from '../../Contexts/UserContext/Authprovider';
 
 
@@ -21,16 +22,8 @@ const Header = () => {
             // An error happened.
         });
     }
-
-
-
-
-
-
-
-
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark"  >
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 
             <Container>
 
@@ -41,7 +34,7 @@ const Header = () => {
 
                 </Navbar.Collapse>
                 <Navbar.Collapse>
-                    <Nav>
+                    <Nav >
 
 
                         {
@@ -51,6 +44,13 @@ const Header = () => {
                                     <Nav.Link href="/courses"> Web Development</Nav.Link>
                                     <Nav.Link href="/coursesdetail"> Web Dev Details </Nav.Link>
                                     <Nav.Link href="/blog" >BLOG</Nav.Link>
+                                    <Nav.Link href="/blog" >FAQ</Nav.Link>
+                                    <Nav.Link href="#">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+                                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                                        </div>
+                                    </Nav.Link>
                                     <Nav.Link >
                                         <OverlayTrigger
                                             placement="bottom"
@@ -70,25 +70,27 @@ const Header = () => {
 
                                     <Nav.Link onClick={handleLogOut} href="/logout">Logout</Nav.Link>
                                     <Nav.Link href="/download" >Checkout</Nav.Link>
+                                    {/* <Nav.Link
+                                        className="navbar-toggler btn btn-primary"
+                                        // type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarSupportedContent"
+                                        aria-controls="navbarSupportedContent"
+                                        aria-expanded="false"
+                                        aria-label="Toggle navigation"
+                                    >
+                                        <span className="navbar-toggler-icon text-black">mood</span>
+                                    </Nav.Link> */}
                                 </div>
                                 :
                                 <div className='d-flex'>
                                     <Nav.Link href="/login">Login</Nav.Link>
                                     <Nav.Link href="/register">Register</Nav.Link>
-                                    <Nav.Link href="/faq">
-                                        FAQ
-                                    </Nav.Link>
+
 
                                 </div>
 
                         }
-
-
-
-
-
-
-
 
                     </Nav>
                 </Navbar.Collapse>

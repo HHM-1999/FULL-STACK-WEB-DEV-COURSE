@@ -26,7 +26,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses',
-                element: <PrivateRoute><Courses></Courses></PrivateRoute>
+                element: <Courses></Courses>
             },
             {
                 path: '/coursesdetail',
@@ -44,7 +44,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/checkout',
-                element: <CheckOut></CheckOut>
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
             },
             {
                 path: '/catagories/:id',

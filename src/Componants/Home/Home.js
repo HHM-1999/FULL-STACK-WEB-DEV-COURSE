@@ -6,10 +6,12 @@ import { Link } from 'react-router-dom';
 import Image from '../Home/Image.png';
 import Photo from '../Home/Photo.png';
 
+
 const Home = () => {
-    const toggleTheme = () => {
-        alert('hle');
-    }
+
+
+
+
     return (
         <Container className='bg-Warning'>
             <Row>
@@ -18,7 +20,7 @@ const Home = () => {
                     <h1 className='text-success'> DIGITAL SKILLS FOR TOMORROW'S JOBS </h1>
                     <br></br>
                     <h5 className='text-warning'>THE FASTEST , MOST EFFECTIVE  TRAINING TO GET FUTURE-READY</h5>
-                    <Link className='mt-3 btn btn-dark p-3' onClick={() => toggleTheme()}>Toggle Mode</Link>
+
                 </Col>
                 <Col className='mt-5'>
                     <Carousel>
