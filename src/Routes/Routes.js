@@ -4,7 +4,6 @@ import Card from "../Componants/Card/Card";
 import Categories from "../Componants/Categories/Categories";
 import CheckOut from "../Componants/Checkout/CheckOut";
 import Courses from "../Componants/Courses/Courses";
-import DownloadPdf from "../Componants/DownloadPdf/DownloadPdf";
 import Home from "../Componants/Home/Home";
 import Login from "../Componants/Login/Login";
 import Register from "../Componants/Register/Register";
@@ -19,7 +18,7 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/home',
-                element: <PrivateRoute><Home></Home></PrivateRoute>
+                element: <Home></Home>
             },
             {
                 path: '/blog',
@@ -27,7 +26,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses',
-                element: <Courses></Courses>
+                element: <PrivateRoute><Courses></Courses></PrivateRoute>
             },
             {
                 path: '/coursesdetail',
@@ -46,11 +45,6 @@ export const routes = createBrowserRouter([
             {
                 path: '/checkout',
                 element: <CheckOut></CheckOut>
-            },
-            {
-                path: '/download',
-                element: <DownloadPdf></DownloadPdf>
-
             },
             {
                 path: '/catagories/:id',
