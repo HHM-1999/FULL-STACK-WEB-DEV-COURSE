@@ -23,11 +23,11 @@ const Header = () => {
         });
     }
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" className='bg-warning text-dark' >
 
             <Container>
 
-                <Navbar.Brand className='fw-bold'> 📚 FULL STACK WEB DEVELOPMENT</Navbar.Brand>
+                <Navbar.Brand className='fw-bold '> 📚 FULL STACK WEB DEVELOPMENT</Navbar.Brand>
                 <Navbar.Brand className='fw-bold' href="/home">Home </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -41,17 +41,17 @@ const Header = () => {
                             user?.uid
                                 ?
                                 <div className='d-flex '>
-                                    <Nav.Link href="/courses">Courses</Nav.Link>
-                                    <Nav.Link href="/coursesdetail">Details </Nav.Link>
-                                    <Nav.Link href="/blog" >BLOG</Nav.Link>
-                                    <Nav.Link href="/blog" >FAQ</Nav.Link>
-                                    <Nav.Link href="#">
+                                    <Nav.Link href="/courses" className='text-dark'>Courses</Nav.Link>
+                                    <Nav.Link href="/coursesdetail" className='text-dark'>Details </Nav.Link>
+                                    <Nav.Link href="/blog" className='text-dark'>BLOG</Nav.Link>
+                                    <Nav.Link href="/blog" className='text-dark' >FAQ</Nav.Link>
+                                    <Nav.Link href="#" className='text-dark'>
                                         <div class="form-check form-switch">
                                             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
                                             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                                         </div>
                                     </Nav.Link>
-                                    <Nav.Link >
+                                    <Nav.Link className='text-dark'>
                                         <OverlayTrigger
                                             placement="bottom"
                                             overlay={<Tooltip id="button-tooltip-2">{user.displayName}</Tooltip>}
@@ -68,8 +68,8 @@ const Header = () => {
                                         </OverlayTrigger>
                                     </Nav.Link>
 
-                                    <Nav.Link onClick={handleLogOut} href="/logout">Logout</Nav.Link>
-                                    <Nav.Link href="/download" >Checkout</Nav.Link>
+                                    <Nav.Link onClick={handleLogOut} href="/logout" className='text-dark'>Logout</Nav.Link>
+                                    <Nav.Link href="/download" className='text-dark' >Checkout</Nav.Link>
                                     {/* <Nav.Link
                                         className="navbar-toggler btn btn-primary"
                                         // type="button"
@@ -83,7 +83,7 @@ const Header = () => {
                                     </Nav.Link> */}
                                 </div>
                                 :
-                                <div className='d-flex'>
+                                <div className='d-flex text-dark'>
                                     <Nav.Link href="/login">Login</Nav.Link>
                                     <Nav.Link href="/register">Register</Nav.Link>
 

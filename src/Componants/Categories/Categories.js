@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import Card from '../Card/Card';
 
 const Categories = () => {
@@ -14,18 +14,18 @@ const Categories = () => {
     })
     return (
         <div>
-            <div className="mt-3 d-flex justify-content-between" >
-                <div>
+            <div className="mt-3 justify-content-between" >
+                {/* <div>
                     {
                         categories.map(category => <p key={category.id}>
                             <Link to={`/courses/${category.id}`}
                                 className='category'>
-                                {category.title_name}
+
 
                             </Link>
                         </p>)
                     }
-                </div>
+                </div> */}
 
                 <div>
                     {

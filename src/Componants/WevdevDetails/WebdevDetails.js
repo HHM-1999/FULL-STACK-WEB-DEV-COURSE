@@ -6,14 +6,15 @@ import useStore from '../Card/zustand';
 import Pdf from "react-to-pdf";
 
 const ref = React.createRef();
+
 const WebdevDetails = () => {
     const { data } = useStore();
     console.log(data);
     return (
-        <div ref={ref}>
+        <div ref={ref} className="mt-5 mx-5">
             <div>
                 <Pdf targetRef={ref} filename="code-example.pdf">
-                    {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+                    {({ toPdf }) => <button className='btn btn-success' onClick={toPdf}>Download Here 📁</button>}
                 </Pdf>
             </div>
 

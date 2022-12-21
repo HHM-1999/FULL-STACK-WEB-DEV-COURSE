@@ -5,7 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from 'react-icons/fa'
 import { auth, AuthContext } from '../../Contexts/UserContext/Authprovider';
 import { GoogleAuthProvider, GithubAuthProvider, signInWithEmailAndPassword } from 'firebase/auth';
-import AuthProvider from '../../Contexts/UserContext/Authprovider';
+// import Authprovider from '../../Contexts/UserContext/Authprovider';
 
 
 const Login = () => {
