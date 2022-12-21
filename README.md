@@ -1,6 +1,6 @@
 * Website Name : FULL STACK WEB DEVELOPMENT
 * Live link : https://educational-website-d654e.web.app/
-#### Features :
+* Features :
 * Firebase
 * React router dom
 * react Bootstrap
